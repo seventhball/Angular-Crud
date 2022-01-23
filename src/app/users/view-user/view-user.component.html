@@ -1,0 +1,32 @@
+<mat-card-title>Users list</mat-card-title>
+<table id="users" style="width:100%">
+    <tr>
+        <th *ngFor="let col of column">
+            {{col}}
+        </th>
+    </tr>
+    <tr *ngFor="let user of listUsers">
+        <td >
+            {{user.id}}
+        </td>
+        <td >
+            {{user.name}}
+        </td>
+        <td >
+            {{user.email}}
+        </td>
+        <td >
+            {{user.address.city}}
+        </td>
+        <td>
+   <a class="action-link" [routerLink]="['/users/edit',user.id]">
+       <mat-icon class="mat-icon">edit</mat-icon></a>
+        </td>
+        <td>
+            <a class="action-link" [routerLink]="['/users/view',user.id]">
+                <mat-icon class="mat-icon">visibility</mat-icon></a>
+            
+        </td>
+    </tr>
+    </table>
+    

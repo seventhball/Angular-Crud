@@ -1,0 +1,26 @@
+<table id="users" style="width:100%">
+<tr>
+    <th *ngFor="let col of column">
+        {{col}}
+    </th>
+</tr>
+<tr *ngFor="let user of listUsers">
+    <td >
+        {{user.id}}
+    </td>
+    <td >
+        {{user.name}}
+    </td>
+    <td >
+        {{user.email}}
+    </td>
+    <td >
+        {{user.address.city}}
+    </td>
+    <td>
+        <!-- <a [routerLink]="['../../user/edit-user',user.id]">Edit</a> -->
+        <mat-icon class="mat-icon" [routerLink]="['../../user/edit-user',user.id]" >edit</mat-icon>
+    </td>
+</tr>
+
+</table>

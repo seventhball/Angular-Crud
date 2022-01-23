@@ -1,0 +1,54 @@
+<!-- <div class="add-icon">
+  <mat-icon class="mat-icon">add</mat-icon>
+</div> -->
+<mat-card>
+  <mat-card-title>Create New User</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="addUserForm" (submit)="createUser()">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>name</mat-label>
+          <input matInput placeholder="name" formControlName="name" />
+        </mat-form-field>
+        <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('required')">
+          Name is required
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('minlength')">
+          Min length is 8 characters
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('pattern')">
+         Only alphabets are allowed
+         </mat-error>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>email</mat-label>
+          <input matInput placeholder="email" formControlName="email" />
+        </mat-form-field>
+        <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('email')">
+         Email-format is incorrect
+        </mat-error>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>city</mat-label>
+          <input matInput placeholder="city" formControlName="city" />
+        </mat-form-field>
+        <mat-error *ngIf="addUserForm.controls['city'].errors && addUserForm.controls['city'].hasError('required')">
+          City is required
+        </mat-error>
+        <mat-error *ngIf="addUserForm.controls['city'].errors && addUserForm.controls['city'].hasError('pattern')">
+          Only alphabets are allowed
+          </mat-error>
+      </p>
+      <p>
+        <!-- <button mat-stroked-button color="primary">Cancel</button> -->
+
+        <button mat-raised-button color="primary" [disabled]="!addUserForm.valid">Save</button>
+      </p>
+    </form>
+  </mat-card-content>
+</mat-card>

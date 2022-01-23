@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularLearn';
+  name ='Angular';
+ username="";
+ month=13;
+ isDarkTheme=false;
+ toggleTheme(){
+   this.isDarkTheme=!this.isDarkTheme;
+ }
 }
