@@ -9,22 +9,45 @@
                  <mat-label>name</mat-label>
                  <input matInput placeholder="name" formControlName="name" />
                </mat-form-field>
+               <mat-error *ngIf="editUserForm.controls['name'].errors && editUserForm.controls['name'].hasError('required')">
+                Name is required
+              </mat-error>
+              <mat-error *ngIf="editUserForm.controls['name'].errors && editUserForm.controls['name'].hasError('minlength')">
+               Min length 8 characters
+              </mat-error>
+              <mat-error *ngIf="editUserForm.controls['name'].errors && editUserForm.controls['name'].hasError('pattern')">
+               Only Alphabets
+               </mat-error>
              </p>
              <p>
                <mat-form-field appearance="outline">
                  <mat-label>email</mat-label>
                  <input matInput placeholder="email" formControlName="email" />
                </mat-form-field>
+               <mat-error *ngIf="editUserForm.controls['email'].errors && editUserForm.controls['email'].hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="editUserForm.controls['email'].errors && editUserForm.controls['email'].hasError('email')">
+               Email-format is incorrect
+              </mat-error>
              </p>
              <p>
                <mat-form-field appearance="outline">
                  <mat-label>city</mat-label>
                  <input matInput placeholder="city" formControlName="city" />
                </mat-form-field>
+               <mat-error *ngIf="editUserForm.controls['city'].errors && editUserForm.controls['city'].hasError('required')">
+                City is required
+              </mat-error>
+              <mat-error *ngIf="editUserForm.controls['city'].errors && editUserForm.controls['city'].hasError('pattern')">
+                Only Alphabets
+               </mat-error>
              </p>
              <p>
-                <button mat-raised-button color="primary">Update</button>
-             </p>
+              <!-- <button mat-stroked-button color="primary">Cancel</button> -->
+      
+              <button mat-raised-button color="primary" [disabled]="!editUserForm.valid">Update</button>
+            </p>
            </form>
 </div>   
 </mat-card-content>

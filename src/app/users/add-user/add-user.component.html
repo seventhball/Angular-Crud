@@ -1,7 +1,7 @@
 <!-- <div class="add-icon">
   <mat-icon class="mat-icon">add</mat-icon>
 </div> -->
-<mat-card>
+<mat-card class="mat">
   <mat-card-title>Create New User</mat-card-title>
   <mat-card-content>
     <form [formGroup]="addUserForm" (submit)="createUser()">
@@ -45,10 +45,21 @@
           </mat-error>
       </p>
       <p>
-        <!-- <button mat-stroked-button color="primary">Cancel</button> -->
-
-        <button mat-raised-button color="primary" [disabled]="!addUserForm.valid">Save</button>
+      <span><button mat-raised-button color="primary" class="save" [disabled]="!addUserForm.valid">Save</button></span>  
       </p>
     </form>
   </mat-card-content>
 </mat-card>
+<div>
+  <button mat-raised-button color="primary" class="reset" (click)='resetForm()'>Cancel</button>
+</div>
+   <!-- <form [formGroup]="ViewUserForm" (submit)="onSubmit()">
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>User Id</mat-label>
+          <input matInput placeholder="User Id" formControlName="id" />
+        </mat-form-field><span> 
+            <button mat-raised-button color="primary">Search</button>
+         </span>
+      </p>
+      </form> -->

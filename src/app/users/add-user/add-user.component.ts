@@ -30,5 +30,7 @@ createUser(){
     this._snackBar.open("user creation failed");
   })
 }
-
+resetForm(){
+  this.addUserForm.reset();
+}
 }

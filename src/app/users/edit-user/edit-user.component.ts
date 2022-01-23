@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
@@ -9,6 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './edit-user.component.html',
   styleUrls: ['./edit-user.component.scss']
 })
+
 export class EditUserComponent implements OnInit {
   userId:any;
   userDetails:any;
@@ -31,9 +32,9 @@ this.userService.viewUser(this.userId)
   this.userDetails=data;
 
   this.editUserForm=this.formBuilder.group({
-    'name':new FormControl(this.userDetails.name),
-    'email':new FormControl(this.userDetails.email),
-    'city':new FormControl(this.userDetails.address.city) 
+    'name':new FormControl(this.userDetails.name,[Validators.required, Validators.minLength(8),Validators.pattern('^[a-zA-Z \-\']+')]),
+    'email':new FormControl(this.userDetails.email,[Validators.required, Validators.email]),
+    'city':new FormControl(this.userDetails.address.city,[Validators.required,Validators.pattern('^[a-zA-Z \-\']+')]) 
   })
   this.dataLoaded=true;
 })
@@ -50,4 +51,5 @@ this.userService.updateUser(this.userId,this.editUserForm.value).subscribe(data=
    this._snackBar.open("user updation failed");
  })
   }
+
 }
