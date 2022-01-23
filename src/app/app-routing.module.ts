@@ -26,10 +26,11 @@ const routes: Routes = [
   ]
 },
 {
-  
-    path:'',component:ViewUserComponent
-  
-}
+    path:'',component:ViewUserComponent  
+},
+// {
+//   path:'search/:id',component:View1userComponent
+// }
 
 ];
 

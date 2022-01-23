@@ -1,10 +1,20 @@
 
-<div class="search-container">
-    <form class="search-form"  (ngSubmit)="onSubmit()">
+<div class="search-container"  >
+    <!-- <form class="search-form"  (ngSubmit)="onSubmit()">
         <input class="search-input"
         name="search"
         ngModel
         placeholder="Person Id" required    />
         <button class="search-button">search</button>
-    </form>
+    </form> -->
+    <form [formGroup]="ViewUserForm" (submit)="onSubmit()">
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>User Id</mat-label>
+          <input matInput placeholder="User Id" formControlName="id" />
+        </mat-form-field><span> 
+            <button mat-raised-button color="primary">Search</button>
+         </span>
+      </p>
+      </form>
 </div>
