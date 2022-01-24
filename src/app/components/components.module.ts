@@ -7,7 +7,8 @@ import {Component} from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     SearchComponent,
@@ -16,6 +17,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     MatIconModule,
+    MatDialogModule,
+    FormsModule,
     RouterModule,
     CommonModule,   
   ],

@@ -1,4 +1,17 @@
 .userDetails{
     width: 80%;
     margin-left: 140px;
+    display: flex;
+    flex-direction: row;
+}
+.img{
+    height:180px;
+    width: 200px;
+}
+.first, .second{
+    width: 300px;
+}
+.second{
+    margin-left: 40px;
+    margin-top: 15px;
 }

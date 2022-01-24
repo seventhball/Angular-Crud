@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
+userId:any;
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.userId='';
   }
-  onSubmit(){
+  openDialog(){
   
   }
 
