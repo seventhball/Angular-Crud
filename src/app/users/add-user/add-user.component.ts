@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 
-
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
@@ -17,9 +16,9 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.addUserForm=this.formBuilder.group({
-      'name':new FormControl('',[Validators.required, Validators.minLength(8),Validators.pattern("[a-zA-Z][a-zA-Z ]")]),
+      'name':new FormControl('',[Validators.required, Validators.minLength(8),Validators.pattern("^[a-zA-Z -']+")]),
       'email':new FormControl('',[Validators.required, Validators.email]),
-      'city':new FormControl('',[Validators.required,Validators.pattern("[a-zA-Z][a-zA-Z ]")])
+      'city':new FormControl('',[Validators.required,Validators.pattern("^[a-zA-Z -']+")])
     })
   }
 createUser(){

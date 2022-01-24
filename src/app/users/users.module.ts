@@ -13,6 +13,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { View1userComponent } from './view1user/view1user.component';
 import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY} from '@angular/material/snack-bar';
 import { SearchUserComponent } from './search-user/search-user.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     ViewUserComponent,
@@ -24,6 +26,8 @@ import { SearchUserComponent } from './search-user/search-user.component';
   imports: [
     MatIconModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
     MatSnackBarModule,
     MatCardModule,
     MatInputModule,

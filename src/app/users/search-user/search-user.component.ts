@@ -12,7 +12,7 @@ export class SearchUserComponent implements OnInit {
   userDetails:any;
     constructor(private userService:UserService,
       private activatedRoute:ActivatedRoute) { }
-  
+
     ngOnInit(): void {
       this.activatedRoute.params.subscribe(data=>{
         this.userId=data['id'];

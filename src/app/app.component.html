@@ -2,7 +2,7 @@
 
 <input [(ngModel)]="username" />
 <h3 *ngIf="month>12">{{username}}</h3> -->
-<!-- <div [ngClass]="isDarkTheme?'dark-theme':'light-theme'">
+<div [ngClass]="isDarkTheme?'dark-theme':'light-theme'">
 <p>
     <mat-toolbar>
      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
@@ -18,16 +18,18 @@
    </button>
   </mat-toolbar>
   </p> 
-<mat-card>
-<mat-card-content>
-    <mat-slide-toggle (click)="toggleTheme()">Slide me!</mat-slide-toggle>
+<mat-card class="card">
+<mat-card-content class="card1">
+    <mat-slide-toggle class="mat-side" (click)="toggleTheme()">Dark Theme</mat-slide-toggle>
+    <app-search></app-search>
+<app-add-item></app-add-item>
+<router-outlet></router-outlet>
     </mat-card-content>
 </mat-card>
 <app-search></app-search>
-</div> -->
-<app-search></app-search>
-<app-add-item></app-add-item>
-  <!-- <app-add-user></app-add-user> -->
-<!-- <app-list-grid></app-list-grid> -->
-<!-- <app-view-user></app-view-user> -->
-<router-outlet></router-outlet>
+</div>
+
+
+
+
+

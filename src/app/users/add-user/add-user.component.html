@@ -1,6 +1,3 @@
-<!-- <div class="add-icon">
-  <mat-icon class="mat-icon">add</mat-icon>
-</div> -->
 <mat-card class="mat">
   <mat-card-title>Create New User</mat-card-title>
   <mat-card-content>
@@ -10,26 +7,43 @@
           <mat-label>name</mat-label>
           <input matInput placeholder="name" formControlName="name" />
         </mat-form-field>
-        <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('required')">
+        <mat-error
+          *ngIf="
+            addUserForm.controls['name'].errors &&
+            addUserForm.controls['name'].hasError('required')
+          ">
           Name is required
         </mat-error>
-        <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('minlength')">
+        <mat-error
+          *ngIf="
+            addUserForm.controls['name'].errors &&
+            addUserForm.controls['name'].hasError('minlength')">
           Min length is 8 characters
         </mat-error>
-        <mat-error *ngIf="addUserForm.controls['name'].errors && addUserForm.controls['name'].hasError('pattern')">
-         Only alphabets are allowed
-         </mat-error>
+        <mat-error
+          *ngIf="
+            addUserForm.controls['name'].errors &&
+            addUserForm.controls['name'].hasError('pattern')">
+          Only alphabets are allowed
+        </mat-error>
       </p>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>email</mat-label>
           <input matInput placeholder="email" formControlName="email" />
         </mat-form-field>
-        <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('required')">
+        <mat-error
+          *ngIf="
+            addUserForm.controls['email'].errors &&
+            addUserForm.controls['email'].hasError('required')">
           Email is required
         </mat-error>
-        <mat-error *ngIf="addUserForm.controls['email'].errors && addUserForm.controls['email'].hasError('email')">
-         Email-format is incorrect
+        <mat-error
+          *ngIf="
+            addUserForm.controls['email'].errors &&
+            addUserForm.controls['email'].hasError('email')
+          ">
+          Email-format is incorrect
         </mat-error>
       </p>
       <p>
@@ -37,23 +51,43 @@
           <mat-label>city</mat-label>
           <input matInput placeholder="city" formControlName="city" />
         </mat-form-field>
-        <mat-error *ngIf="addUserForm.controls['city'].errors && addUserForm.controls['city'].hasError('required')">
+        <mat-error
+          *ngIf="
+            addUserForm.controls['city'].errors &&
+            addUserForm.controls['city'].hasError('required')
+          ">
           City is required
         </mat-error>
-        <mat-error *ngIf="addUserForm.controls['city'].errors && addUserForm.controls['city'].hasError('pattern')">
+        <mat-error
+          *ngIf="
+            addUserForm.controls['city'].errors &&
+            addUserForm.controls['city'].hasError('pattern')
+          "
+        >
           Only alphabets are allowed
-          </mat-error>
+        </mat-error>
       </p>
       <p>
-      <span><button mat-raised-button color="primary" class="save" [disabled]="!addUserForm.valid">Save</button></span>  
+        <span
+          ><button
+            mat-raised-button
+            color="primary"
+            class="save"
+            [disabled]="!addUserForm.valid"
+          >
+            Save
+          </button></span
+        >
       </p>
     </form>
   </mat-card-content>
 </mat-card>
 <div>
-  <button mat-raised-button color="primary" class="reset" (click)='resetForm()'>Cancel</button>
+  <button mat-raised-button color="primary" class="reset" (click)="resetForm()">
+    Cancel
+  </button>
 </div>
-   <!-- <form [formGroup]="ViewUserForm" (submit)="onSubmit()">
+<!-- <form [formGroup]="ViewUserForm" (submit)="onSubmit()">
     <p>
         <mat-form-field appearance="outline">
           <mat-label>User Id</mat-label>
