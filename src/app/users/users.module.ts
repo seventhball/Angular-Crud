@@ -15,6 +15,7 @@ import {MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MAT_SNACK_BAR_DEFAULT_
 import { SearchUserComponent } from './search-user/search-user.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+// import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     ViewUserComponent,
